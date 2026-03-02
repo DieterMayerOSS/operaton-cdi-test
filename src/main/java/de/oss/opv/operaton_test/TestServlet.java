@@ -18,11 +18,13 @@ public class TestServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        
+        long userCount = identityService.createUserQuery().count();
+        
         resp.setContentType("text/plain");
-        if (identityService != null) {
-            resp.getWriter().write("BINGO! IdentityService has been successfully injected via CDI!");
-        } else {
-            resp.getWriter().write("ERROR: IdentityService is NULL!");
-        }
+        resp.setContentType("text/html");
+        resp.getWriter().println("<h1>BINGO! - Operaton CDI Test</h1>");
+        resp.getWriter().println("<p>IdentityService injected!</p>");
+        resp.getWriter().println("<p>Anzahl User: " + userCount + "</p>");
     }
 }
