@@ -8,7 +8,7 @@ Clone the repo.
 
 Build with mvn clean install.
 
-Deploy to WildFly 38.
+Deploy to WildFly 39.0.1.
 
 Test 1: Use the main branch (no structure XML) -> Deployment fails.
 
